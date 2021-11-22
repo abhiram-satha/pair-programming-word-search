@@ -16,6 +16,7 @@ const wordSearch = (letters, word) => {
     for (l of verticalJoin) {
         //check if the strings are empty
         if (!l.length) return false;
+        console.log(l);
         if (l.includes(word)) return true
     }
     const reverseJoin = [];
@@ -42,27 +43,28 @@ const wordSearch = (letters, word) => {
     return false;
 }
 
-const diagwordSearch = (letters, word) => {
-    const diagonalJoin = [];
-    let diagWordStrLen = letters.length + letters[0].length;
-    let diaglen = letters[0].length;
-    let counter = 0;
-    for (let i = 0; i < diagWordStrLen; i++) {
-        let word = "";
-        for (let j = 0; j < diaglen; j++) {
-            word += letters[j][j + counter];
-            // counter++;
-        }
-        diagonalJoin.push(word);
-        console.log(diagonalJoin);
-        diaglen -= 1;
-        counter++;
-    }
-    // console.log(diagonalJoin);
-    return false;
-};
+// was unable to implement diamond
+// const diagwordSearch = (letters, word) => {
+//     const diagonalJoin = [];
+//     let diagWordStrLen = letters.length + letters[0].length;
+//     let diaglen = letters[0].length;
+//     let counter = 0;
+//     for (let i = 0; i < diagWordStrLen; i++) {
+//         let word = "";
+//         for (let j = 0; j < diaglen; j++) {
+//             word += letters[j][j + counter];
+//             // counter++;
+//         }
+//         diagonalJoin.push(word);
+//         console.log(diagonalJoin);
+//         diaglen -= 1;
+//         counter++;
+//     }
+//     // console.log(diagonalJoin);
+//     return false;
+// };
 
 
-module.exports = { wordSearch, diagwordSearch }
+module.exports = { wordSearch }
 
 //collab with github user- @merwynp and @abhiram-satha
